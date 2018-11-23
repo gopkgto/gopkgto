@@ -21,6 +21,8 @@ func init() {
 }
 
 func main() {
+	flag.Parse()
+
 	var addr string = fmt.Sprintf("0.0.0.0:%d", port)
 
 	if config_data, err := ioutil.ReadFile(config_file); err != nil {
