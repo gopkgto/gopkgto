@@ -65,6 +65,10 @@ func http_handler(w http.ResponseWriter, r *http.Request) {
 		}
 
 		var host = r.Host
+		// real host from reverse proxy
+		if header_vals, ex := r.Header["X-Forwarded-Host"]; ex && len(header_vals) == 1 {
+			host = header_vals[0]
+		}
 		var path = r.URL.Path
 		// TODO: get from config
 		var repo_type, repo_url, exist = config.Get(path)
