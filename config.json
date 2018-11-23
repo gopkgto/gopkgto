@@ -1,7 +1,7 @@
 {
     "repositories": [
         {
-            "path": "go/go",
+            "path": "/go/go",
             "repo_type": "git",
             "repo_url": "ssh://git@repo.fowd.io/go/go.git"
         }
